@@ -90,7 +90,7 @@ void test_build_bloom_filter() {
 }
 
 void run_bloom_filter(int num_hashes, const char* dictionary, const char* input_file, const char* output_file) {
-    struct bloom_filter * bf = bloom_filter(num_hashes, 500000, 0, 0);
+    struct bloom_filter * bf = bloom_filter(num_hashes, 5000000, 0, 0);
     int lines = get_line_count(dictionary);
     FILE * fp_dict = fopen(dictionary, "r+");
     // char* temp_str = (char*) malloc(256 * sizeof(char));
