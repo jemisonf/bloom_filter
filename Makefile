@@ -1,7 +1,7 @@
 FLAGS=-Wall -std=c99
 CC=gcc
 
-all: bloom_filter.o PMurHash.o main.o hash.o
+all: bloom_filter.o PMurHash.o main.o hash.o parse_file.o
 	$(CC) $(FLAGS) $^ -o main
 
 PMurHash.o: lib/PMurHash.c
@@ -15,3 +15,6 @@ main.o: main.c
 
 hash.o: hash.c
 	$(CC) $(FLAGS) -c hash.c -o hash.o
+
+parse_file.o: parse_file.c
+	$(CC) $(FLAGS) -c parse_file.c -o parse_file.o

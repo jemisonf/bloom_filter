@@ -7,7 +7,7 @@ struct hash;
 
 struct hash * hash();
 
-int hash_string(struct hash* self, const char * string);
+unsigned int hash_string(struct hash* self, const char * string);
 
 void hash_free(struct hash* self);
 

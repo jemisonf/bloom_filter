@@ -12,7 +12,7 @@ struct hash * hash() {
     return new_hash;
 }
 
-int hash_string(struct hash* self, const char* string) {
+unsigned int hash_string(struct hash* self, const char* string) {
     return PMurHash32(self->seed, string, strlen(string));
 }
 
