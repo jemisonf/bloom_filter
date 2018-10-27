@@ -23,7 +23,6 @@ struct bloom_filter* bloom_filter(int num_hashes,
 
     for (int i = 0; i < num_hashes; i++) {
         self->hashes->hashes[i] = hash();
-        printf("%p\n", self->hashes->hashes[i]);
     }
 
     self->hashes->num_hashes = num_hashes;
@@ -67,6 +66,7 @@ void bloom_filter_free(struct bloom_filter * self) {
     for (int i = 0; i < self->hashes->num_hashes; i++) {
         hash_free(self->hashes->hashes[i]);
     }
+    free(self->bit_array);
     free(self->hashes);
     free(self);
 }

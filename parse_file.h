@@ -18,4 +18,4 @@ void free_lines(struct lines *);
 
 int get_line_count(const char* filename);
 
-char* readline(FILE * fp);
+void readline(FILE * fp, char* line);
